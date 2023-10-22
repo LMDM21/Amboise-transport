@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container {
+      position: relative;
+      width: 400px; /* Ajustez la largeur et la hauteur selon vos besoins */
+      height: 1000px;
+    }
+
+    .image1, .image2, .image3, .image4, .image5, .image6, .image7 {
+      position: absolute;
+      top: 0;
+      left: 0px;
+      display: none; /* Par défaut, toutes les images sont masquées */
+    }
+
+
+    /* Ajoutez ces styles pour réduire la taille des images */
+    .container img {
+      max-width: 250%; /* Réduire la largeur au maximum possible du conteneur */
+      max-height:250%; /* Réduire la hauteur au maximum possible du conteneur */
+      z-index: 1; /* Élévation des images par rapport aux calques */
+    }
+
+    .active {
+      display: block; /* Cette classe affiche l'image active */
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="container" id="zoomContainer">
+        <img src="https://zupimages.net/up/23/42/b30b.png" alt="Image 1" class="image1">
+        <img src="https://zupimages.net/up/23/42/j97o.png" alt="Image 2" class="image2">
+        <img src="https://zupimages.net/up/23/42/ir6i.png" alt="Image 3" class="image3">
+        <img src="https://zupimages.net/up/23/42/9j9s.png" alt="Image 4" class="image4">
+        <img src="https://zupimages.net/up/23/42/m52m.png" alt="Image 5" class="image5">
+        <img src="https://zupimages.net/up/23/42/uxet.png" alt="Image 6" class="image6">
+        <img src="https://zupimages.net/up/23/42/7694.png" alt="Image 7">
+    
+  </div>
+
+  <button onclick="activateImage('image1')">Ligne 3</button>
+  <button onclick="activateImage('image2')">Ligne 5</button>
+  <button onclick="activateImage('image3')">Ligne 46</button>
+  <button onclick="activateImage('image4')">Ligne 47</button>
+  <button onclick="activateImage('image5')">Ligne 51</button>
+  <button onclick="activateImage('image6')">Ligne 70</button>
+  <button onclick="deactivateAllImages()">Désactiver Tout</button>
+
+  
+
+  <script>
+    const container = document.getElementById('zoomContainer');
+    const images = document.querySelectorAll('.container img');
+
+    let currentScale = 1; // Zoom initial à 100%
+
+    container.addEventListener('wheel', (e) => {
+      e.preventDefault(); // Empêcher le défilement de la page
+      if (e.deltaY > 0) {
+        // Faire un zoom arrière
+        zoomOut();
+      } else {
+        // Faire un zoom avant
+        zoomIn();
+      }
+    });
+
+    function zoomIn() {
+      currentScale += 0.1;
+      applyScale();
+    }
+
+    function zoomOut() {
+      currentScale -= 0.1;
+      applyScale();
+    }
+
+    function applyScale() {
+      if (currentScale < 0.1) {
+        currentScale = 0.1; // Zoom minimum
+      }
+      images.forEach((img) => {
+        img.style.transform = `scale(${currentScale})`;
+      });
+    }
+
+
+    function activateImage(className) {
+      var images = document.querySelectorAll(".container img");
+      images.forEach(function (img) {
+        img.classList.remove("active");
+        if (img.classList.contains(className)) {
+          img.classList.add("active");
+        }
+      });
+    }
+
+    function deactivateAllImages() {
+      var images = document.querySelectorAll(".container img");
+      images.forEach(function (img) {
+        img.classList.remove("active");
+      });
+    }
+  </script>
+</body>
+</html>

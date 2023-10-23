@@ -10,6 +10,7 @@
       margin: 0;
     }
 
+
     .container {
         position: relative;
       width: 1000px; /* Ajustez la largeur du cadre selon vos besoins */
@@ -17,7 +18,7 @@
       overflow: hidden;
     }
 
-    .image1, .image2, .image3, .image4, .image5, .image6, .image7 {
+    .image1, .image2, .image3, .image4, .image5, .image6, .image7, .image8, .image9, .image10, .image11, .image12, .image13 {
       position: absolute;
       top: 0;
       left: 0px;
@@ -36,44 +37,90 @@
       display: block; /* Cette classe affiche l'image active */
     }
 
-    .magnifier {
-      position: absolute;
-      width: 200px; /* Ajustez la taille de la loupe selon vos besoins */
-      height: 200px; /* Ajustez la taille de la loupe selon vos besoins */
-      border: 1px solid #000;
-      background-size: 400px 400px; /* Ajustez la taille de la zone de zoom */
-      pointer-events: none;
+    .button-row {
+      display: flex;
+      flex-direction: column; /* Utilisez "column" pour deux colonnes */
     }
 
+    .button {
+      margin: 1px;
+      padding: 1px;
+      background-color: #49554e;
+      color: #38a5c077;
+      border: none;
+      cursor: pointer;
+    }
+
+    .footer-button {
+      margin-top: 980px;
+      margin-left: -150px;
+      text-align: center;
+    }
+
+    .footer-button a {
+      display: inline-flex;
+      padding: 0px 0px;
+      background-color: #a5cfdf00; /* Couleur du bouton */
+      color: #000000; /* Couleur du texte */
+      text-decoration: color(srgb red green blue);
+      border-radius: 100px;
+      font-weight: bolder;
+
+    }
+
+    
 
   </style>
 </head>
 <body>
   <div class="container" id="zoomContainer">
-        <img src="https://zupimages.net/up/23/42/b30b.png" alt="Image 1" class="image1">
-        <img src="https://zupimages.net/up/23/42/j97o.png" alt="Image 2" class="image2">
-        <img src="https://zupimages.net/up/23/42/ir6i.png" alt="Image 3" class="image3">
-        <img src="https://zupimages.net/up/23/42/9j9s.png" alt="Image 4" class="image4">
-        <img src="https://zupimages.net/up/23/42/m52m.png" alt="Image 5" class="image5">
-        <img src="https://zupimages.net/up/23/42/uxet.png" alt="Image 6" class="image6">
-        <img src="https://zupimages.net/up/23/42/7694.png" alt="Image 7">
+        <img src="https://zupimages.net/up/23/43/l25t.png" alt="Image 1" class="image1">
+        <img src="https://zupimages.net/up/23/42/b30b.png" alt="Image 2" class="image2">
+        <img src="https://zupimages.net/up/23/42/j97o.png" alt="Image 3" class="image3">
+        <img src="https://zupimages.net/up/23/42/ir6i.png" alt="Image 4" class="image4">
+        <img src="https://zupimages.net/up/23/42/9j9s.png" alt="Image 5" class="image5">
+        <img src="https://zupimages.net/up/23/42/m52m.png" alt="Image 6" class="image6">
+        <img src="https://zupimages.net/up/23/42/uxet.png" alt="Image 7" class="image7">
+        <img src="https://zupimages.net/up/23/43/vu9a.png" alt="Image 8" class="image8">
+        <img src="https://zupimages.net/up/23/43/5503.png" alt="Image 9" class="image9">
+        <img src="https://zupimages.net/up/23/43/20c1.png" alt="Image 10" class="image10">
+        <img src="https://zupimages.net/up/23/43/26ge.png" alt="Image 11" class="image11">
+        <img src="https://zupimages.net/up/23/42/7694.png" alt="Image 12">
     
   </div>
+  <div class="button">
+      <div class="button-row">
+        <button onclick="activateImage('image1')">Ligne 2</button>
+        <button onclick="activateImage('image2')">Ligne 3</button>
+        <button onclick="activateImage('image3')">Ligne 5</button>
+        <button onclick="activateImage('image4')">Ligne 46</button>
+        <button onclick="activateImage('image5')">Ligne 47</button>
+        <button onclick="activateImage('image6')">Ligne 51</button>
+        <button onclick="activateImage('image7')">Ligne 70</button>
+      </div>
+  </div>  
+  <div class="button">
+      <div class="button-row">
+        <button onclick="activateImage('image8')">Ligne 472</button>
+        <button onclick="activateImage('image9')">Ligne 520</button>
+        <button onclick="activateImage('image10')">Ligne 584</button>
+        <button onclick="activateImage('image11')">Ligne 695</button>
+        <button onclick="deactivateAllImages()">Désactiver Tout</button>
+      </div>
+  </div>
 
-  <button onclick="activateImage('image1')">Ligne 3</button>
-  <button onclick="activateImage('image2')">Ligne 5</button>
-  <button onclick="activateImage('image3')">Ligne 46</button>
-  <button onclick="activateImage('image4')">Ligne 47</button>
-  <button onclick="activateImage('image5')">Ligne 51</button>
-  <button onclick="activateImage('image6')">Ligne 70</button>
-  <button onclick="deactivateAllImages()">Désactiver Tout</button>
+  <div class="footer-button">
+    <a href="https://discord.gg/rUvX4WM8HD">clic ici pour le discord>
+      <img src="https://zupimages.net/up/23/43/qjq4.png" alt="Bouton d'image">
+    </a>
+  </div>
+  
 
   
 
   <script>
    const container = document.getElementById('zoomContainer');
     const image = document.querySelector('.image');
-    const magnifier = document.getElementById('magnifier');
 
     let currentScale = 1;
 
@@ -101,26 +148,6 @@
       container.scrollTop = scrollY;
 
       applyScale();
-    });
-
-    container.addEventListener('mousemove', (e) => {
-      const containerRect = container.getBoundingClientRect();
-      const offsetX = e.clientX - containerRect.left;
-      const offsetY = e.clientY - containerRect.top;
-
-      // Mettez à jour la position de la loupe
-      magnifier.style.left = e.clientX - magnifier.clientWidth / 2 + 'px';
-      magnifier.style.top = e.clientY - magnifier.clientHeight / 2 + 'px';
-
-      // Affichez la loupe et ajustez le zoom
-      magnifier.style.backgroundImage = `url('${image.src}')`;
-      magnifier.style.backgroundSize = `${image.width * currentScale}px ${image.height * currentScale}px`;
-      magnifier.style.backgroundPosition = `-${offsetX * currentScale}px -${offsetY * currentScale}px`;
-    });
-
-    container.addEventListener('mouseleave', () => {
-      // Cachez la loupe lorsque la souris quitte le cadre
-      magnifier.style.display = 'none';
     });
 
     function applyScale() {

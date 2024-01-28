@@ -3,7 +3,7 @@
 <head>
   <style>
     body {
-       background-color: #050744; /* Couleur d'arrière-plan gris-noir */
+      background-color: #050744; /* Couleur d'arrière-plan gris-noir */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -28,10 +28,11 @@
 
 
     /* Ajoutez ces styles pour réduire la taille des images */
-    .container img {
+    .container img{
       max-width: 100%; /* Réduire la largeur au maximum possible du conteneur */
-      max-height:100%; /* Réduire la hauteur au maximum possible du conteneur */
+      max-height: 100%; /* Réduire la hauteur au maximum possible du conteneur */
       z-index: 1; /* Élévation des images par rapport aux calques */
+ 
     }
 
     .active {
@@ -70,6 +71,7 @@
     }
 
     
+    
 
   </style>
 </head>
@@ -78,7 +80,7 @@
         <img src="https://zupimages.net/up/23/43/l25t.png" alt="Image 1" class="image1">
         <img src="https://zupimages.net/up/23/42/b30b.png" alt="Image 2" class="image2">
         <img src="https://zupimages.net/up/23/42/j97o.png" alt="Image 3" class="image3">
-        <img src="https://zupimages.net/up/23/42/ir6i.png" alt="Image 4" class="image4">
+        <img src="https://zupimages.net/up/24/04/4aki.png" alt="Image 4" class="image4">
         <img src="https://zupimages.net/up/23/42/9j9s.png" alt="Image 5" class="image5">
         <img src="https://zupimages.net/up/23/42/m52m.png" alt="Image 6" class="image6">
         <img src="https://zupimages.net/up/23/42/uxet.png" alt="Image 7" class="image7">
@@ -86,7 +88,9 @@
         <img src="https://zupimages.net/up/23/43/5503.png" alt="Image 9" class="image9">
         <img src="https://zupimages.net/up/23/43/20c1.png" alt="Image 10" class="image10">
         <img src="https://zupimages.net/up/23/43/26ge.png" alt="Image 11" class="image11">
-        <img src="https://zupimages.net/up/23/42/7694.png" alt="Image 12">
+        <img src="https://zupimages.net/up/24/04/4944.png" alt="Image 12" class="image12">
+        <img src="https://zupimages.net/up/24/04/yff8.png" alt="Image 13" class="image13">
+        <img src="https://zupimages.net/up/23/42/7694.png" alt="Image 14">
     
   </div>
   <div class="button">
@@ -98,6 +102,8 @@
         <button onclick="activateImage('image5')">Ligne 47</button>
         <button onclick="activateImage('image6')">Ligne 51</button>
         <button onclick="activateImage('image7')">Ligne 70</button>
+        <button onclick="activateImage('image12')">Ligne 18</button>
+        <button onclick="activateImage('image13')">Ligne 83</button>
       </div>
   </div>  
   <div class="button">
@@ -106,9 +112,13 @@
         <button onclick="activateImage('image9')">Ligne 520</button>
         <button onclick="activateImage('image10')">Ligne 584</button>
         <button onclick="activateImage('image11')">Ligne 695</button>
-        <button onclick="deactivateAllImages()">Désactiver Tout</button>
       </div>
   </div>
+  <div class="button">
+    <div class="button-row">
+        <button onclick="deactivateAllImages()">Désactiver Tout</button>
+    </div>
+</div>
 
   <div class="footer-button">
     <a href="https://discord.gg/rUvX4WM8HD">clic ici pour le discord>
